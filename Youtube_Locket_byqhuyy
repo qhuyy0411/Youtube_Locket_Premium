@@ -1,0 +1,23 @@
+# Link Up Locket Gold Vip Pro By Qhuyy🤫🤫
+#!url=https://raw.githubusercontent.com/qhuyy0411/Up-locked-gold/main/Locket_gold_byqhuyy.sgmodule
+# ~ Cấm mọi hình thức ăn cắp bản quyền
+
+[General]
+bypass-system = true
+skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local
+bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.168.0.0/16, 224.0.0.0/4, 255.255.255.255/32
+
+[Script]
+# ~ By Qhuyy (Locket Gold)
+revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/qhuyy0411/Up-locked-gold/main/js/revenuecat_qhuyy.js, requires-body=true, max-size=-1, timeout=60
+
+deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/qhuyy0411/Up-locked-gold/main/js/deleteHeader_qhuyy.js, timeout=60
+
+# YouTube AdBlock
+YouTube_AdBlock = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence),script-path=https://raw.githubusercontent.com/qhuyy0411/Youtube_Premium_qhuyy/refs/heads/main/js,requires-body=true,max-size=524288,timeout=10
+
+[URL Rewrite]
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback\? reject
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com, *.googlevideo.com, youtubei.googleapis.com
